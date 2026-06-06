@@ -1,0 +1,94 @@
+/* .tracker-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.name-section,
+.month-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.line {
+  width: 250px;
+  border-bottom: 1px solid #000;
+}
+
+.tracker-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tracker-table th,
+.tracker-table td {
+  border: 1px solid #ccc;
+}
+
+.habit-header {
+  background: #111;
+  color: white;
+  text-align: left;
+  padding: 10px;
+  min-width: 180px;
+}
+
+.tracker-table th:not(.habit-header) {
+  background: #111;
+  color: white;
+  width: 35px;
+  text-align: center;
+}
+
+.habit-name {
+  padding-left: 10px;
+  height: 40px;
+  min-width: 180px;
+}
+
+.day-cell {
+  width: 35px;
+  height: 40px;
+  text-align: center;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.name-section,
+.month-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.name-input,
+.month-dropdown {
+  width: 250px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.month-dropdown {
+  cursor: pointer;
+} */

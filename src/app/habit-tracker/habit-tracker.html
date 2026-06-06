@@ -1,0 +1,106 @@
+<div class="container">
+
+    <div>
+        <strong>NAME:</strong> {{ username }}
+    </div>
+
+    <div style="margin-top:10px;">
+        <strong>MONTH</strong>
+
+        <select
+            [(ngModel)]="selectedMonth"
+            (change)="onMonthChange()">
+
+            <option value="">Select Month</option>
+
+            <option
+                *ngFor="let month of months"
+                [value]="month">
+
+                {{ month }}
+
+            </option>
+
+        </select>
+    </div>
+
+    <br>
+
+    <table border="0">
+
+        <thead>
+
+            <tr>
+
+                <th>HABITS / ROUTINES</th>
+
+                <th *ngFor="let day of days">
+                    {{ day }}
+                </th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr
+                *ngFor="let habit of habits; let rowIndex = index">
+
+                <td>
+
+                    {{ rowIndex + 1 }}.
+
+                    <input
+                        type="text"
+                        [(ngModel)]="habit.name"
+                        placeholder="Habit Name">
+
+                </td>
+
+                <td *ngFor="let day of days; let dayIndex = index">
+
+                    <input
+                        type="checkbox"
+                        [(ngModel)]="habit.days[dayIndex]">
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+        <tfoot>
+
+            <tr>
+
+                <td>
+                    <strong>Score</strong>
+                </td>
+
+                <td *ngFor="let day of days; let dayIndex = index">
+
+                    {{ getDayScore(dayIndex) }}
+
+                </td>
+
+            </tr>
+
+        </tfoot>
+
+    </table>
+
+    <br>
+
+    <button (click)="save()">
+        Save
+    </button>
+
+    <br><br>
+
+    <div>
+        <strong>Total Score:</strong>
+        {{ getTotalScore() }}
+    </div>
+
+</div>

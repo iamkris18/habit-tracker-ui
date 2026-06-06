@@ -1,0 +1,19 @@
+<div class="LoginForm">
+    @if(errorMessage){
+        <div>Authtencation failed. Please Check</div>
+    }
+    <div>
+        <label>User Name</label>
+        <input type="text" name="username"  [(ngModel)] = "username"/> 
+    </div>
+
+    <div>
+        <label>Password</label>
+        <input type="text" name="password"  [(ngModel)] = "password"/> 
+    </div>
+
+    <div>
+        <button type="button" name="Login" (click)="login()">Login</button>
+    </div>
+</div>
+      
