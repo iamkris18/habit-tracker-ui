@@ -52,7 +52,7 @@
       <a routerLink="/login">Login</a>
     } @else {
       <span class="username"> Welcome {{ authService.username() }}</span>
-      <a href="#" (click)="onLogout(); $event.preventDefault()">Logout</a>
+      <a (click)="onLogout()">Logout</a>
     }
   </div>
 </header>

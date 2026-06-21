@@ -33,7 +33,7 @@ export class HabitTracker implements OnInit {
     console.log('Username:', this.username);
     console.log('================================');
 
-    console.log('auth' , this.authService.isAuthenticated())
+    // console.log('auth' , this.authService.isAuthenticated())
   }
 
   private createEmptyHabits(): Habit[] {
