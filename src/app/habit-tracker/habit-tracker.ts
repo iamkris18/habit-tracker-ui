@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Habit,Months } from './Habit';
+import { AuthService } from '../security/auth.service';
 
 @Component({
   selector: 'app-habit-tracker',
@@ -13,7 +14,7 @@ import { Habit,Months } from './Habit';
 })
 export class HabitTracker implements OnInit {
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute,public authService: AuthService) {}
 
   username = '';
   selectedMonth = '';
@@ -31,6 +32,8 @@ export class HabitTracker implements OnInit {
     console.log('Habit Tracker Loaded');
     console.log('Username:', this.username);
     console.log('================================');
+
+    console.log('auth' , this.authService.isAuthenticated())
   }
 
   private createEmptyHabits(): Habit[] {

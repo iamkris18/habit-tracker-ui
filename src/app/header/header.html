@@ -13,18 +13,46 @@
 </header> -->
 
 
-<header class="netflix-header">
+<!-- <header class="netflix-header">
   <div class="left-section">
     <a class="logo" routerLink="/">HABBIT</a>
 
     <nav>
-       <a routerLink="/welcome/krishna">Home</a>
+       <a routerLink="/welcome/">Home</a>
       <a routerLink="/habit-tracker/krishna">Habits</a> 
     </nav>
   </div>
 
   <div class="right-section">
-    <a routerLink="/login">Login</a>
-    <a routerLink="/logout">Logout</a>
+    @if (!authService.isAuthenticated()) {
+      <a routerLink="/login">Login</a>
+    }@else{
+      <a (click)="onLogout()">Logout</a>
+    }
+  </div>
+</header> -->
+
+<header class="netflix-header">
+  <div class="left-section">
+    <a class="logo" routerLink="/">HABBIT</a>
+
+    @if (authService.isAuthenticated()) {
+      <nav>
+   <a [routerLink]="['/welcome', authService.username()]">Home</a>
+
+    <a [routerLink]="['/habit-tracker', authService.username()]">
+      Habits
+    </a>
+   </nav>
+    }
+  </div>
+
+  <div class="right-section">
+    @if (!authService.isAuthenticated()) {
+      <a routerLink="/login">Login</a>
+    } @else {
+      <span class="username"> Welcome {{ authService.username() }}</span>
+      <a href="#" (click)="onLogout(); $event.preventDefault()">Logout</a>
+    }
   </div>
 </header>
