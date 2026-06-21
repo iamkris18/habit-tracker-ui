@@ -17,21 +17,11 @@ export class LoginComponent{
 
   private route = inject(Router);
 
-  ngOnInIt(){
-    console.log(this.authService);
-  }
-
   login(){
-    const hardcodedUsername = 'krishna';
-    const hardCodedpassword = 'Test@123';
-    if(
-      this.password === hardCodedpassword
-    ){ 
-      this.authService.login(this.username);
+    if(this.authService.login(this.username,this.password)){
       this.errorMessage = true;
       this.route.navigate([`/habit-tracker/${this.username}`]);
     }else{
-      this.authService.logout;
       this.errorMessage = true;
     }
   }
